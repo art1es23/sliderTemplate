@@ -44,6 +44,15 @@ const prevSlide = () => {
     }
 }
 
+dots.forEach((item, indexDot) => {
+    const currentDot = () => {
+        index = indexDot;
+        currentActive(index);
+    }
+
+    item.addEventListener('click', currentDot)
+})
+
 prev.addEventListener('click', prevSlide);
 next.addEventListener('click', nextSlide);
 /*
