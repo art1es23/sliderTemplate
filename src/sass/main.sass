@@ -7,17 +7,92 @@
   padding: 0
 
 body
+  padding: 0
+  margin: 0
   display: flex
-  align-items: center
-  justify-content: center
   color: black
+  min-height: 100vh
+  background-color: darkorange
 
 a
   text-decoration: none
 
-ul
-  list-style: none
+.slider
+  width: 50%
+  display: flex
+  margin: auto
+  position: relative
+  justify-content: center
+  &--wrapper
+    max-width: 100%
+    width: 100%
+    height: 60vh
+    display: flex
+    position: relative
+    overflow: hidden
+    box-shadow: 10px 10px 44px 10px rgba(0,0,0,0.75)
 
+  &__item
+    display: none
+    width: 100%
+    height: 100%
 
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+  &-btn
+    &__item
+      display: flex
+      position: absolute
+      top: 0
+      left: 0
+      width: 7.5%
+      height: 100%
+      justify-content: center
+      align-items: center
+      color: black
+      font-size: 1.35rem
+      transition: background-color 0.3s ease-in-out
+      background-color: rgba(255, 255, 255, 0.25)
+      &:hover
+        background-color: rgba(255, 255, 255, 0.5)
+        cursor: pointer
+
+.btn--next
+  left: 100%
+  transform: translateX(-100%)
+
+.slider-dots
+  &--wrapper
+    position: absolute
+    bottom: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 10%
+    width: 100%
+    transform: translateY(100%)
+
+  &__item
+    display: flex
+    width: 1.5rem
+    height: 1.5rem
+    margin-left: 1.5rem
+    border: 1px solid cornflowerblue
+    border-radius: 50%
+    transition: all 0.3s ease-in-out
+
+    &:first-child
+      margin-left: 0
+
+    &:hover
+      background-color: cornflowerblue
+      cursor: pointer
+
+.active
+  display: block
+  background-color: cornflowerblue
 
 @import "helpers/fonts"
